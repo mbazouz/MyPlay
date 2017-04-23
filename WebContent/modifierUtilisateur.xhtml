@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+
+<h:head>
+  
+<meta charset="UTF-8" />
+    
+<title>Modifier Utilisateur</title>
+        <link rel="stylesheet" href="css/styleModUser.css" /> </h:head> 
+<body>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css" />
+<h:form>
+<div class="login">
+  
+<h2>Register</h2>
+  <h:inputText id="nom" name="firstname" p:placeholder="First name" type="text"  value="#{utilisateurBusiness.utilisateurActuel.prenom}"/>
+ 
+    <h:inputText name="lastname" p:placeholder="Last name" type="text" value="#{utilisateurBusiness.utilisateurActuel.nom}"/>
+  <h:inputText name="username" p:placeholder="Pseudo" type="text"  value="#{utilisateurBusiness.utilisateurActuel.pseudo}"/>
+ <h4> <h:outputText id="outp" value="#{utilisateurBusiness.text}" /> </h4>
+  <h:inputText id="pw" name="password" p:placeholder="Password" type="password"  value="#{utilisateurBusiness.utilisateurActuel.motDePasse}"/>
+<input id="pww" name="confirmpassword" p:placeholder="Confirm Password" type="password" jsfc="h:inputText" value="#{utilisateurBusiness.testMotDePasse}"/> 
+  <h:inputText name="email" p:placeholder="E-Mail Address" type="text"  value="#{utilisateurBusiness.utilisateurActuel.email}"/>
+  
+<div class="agree">
+<!--     <h:inputText id="agree" name="agree" type="checkbox" /> -->
+    <label for="agree" />Accept rules and conditions
+  </div>
+<!--   <h:inputText class="animated" type="submit" value="Register" action="#{UtilisateurController.ajouter}"/> -->
+<h:commandButton class="animated" id="enregistrer" action="#{utilisateurBusiness.ajouterUtilisateur}"
+				value="Register" />
+  <a class='forgot' href='login.xhtml'>Already have an account?</a>
+  <br /><br />
+  </div>
+       
+    </h:form>
+    
+    
+  
+</body></html>

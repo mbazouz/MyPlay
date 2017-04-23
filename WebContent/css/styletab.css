@@ -1,0 +1,80 @@
+
+
+html {
+  height: 100vh;
+  color: rgba(0, 0, 0, 0.7);
+  background: -webkit-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%);
+  background: linear-gradient(0deg, #8e9eab 10%, #eef2f3 90%);
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  padding: 50px;
+}
+
+.table-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+}
+.table-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 50px;
+  height: 100%;
+  border-radius: 10px 0 0 10px / 50% 0 0 50%;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+}
+.table-wrapper .table-inner {
+  overflow-x: auto;
+}
+.table-wrapper .table-inner::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+}
+.table-wrapper .table-inner::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  border: 2px solid #fff;
+  background-color: #8e9eab;
+}
+@media (min-width: 860px) {
+  .table-wrapper {
+    overflow: visible;
+    box-shadow: none;
+  }
+  .table-wrapper:after {
+    content: none;
+  }
+}
+
+.pricing-table {
+  margin: 10px 0 20px 0;
+  text-align: center;
+  font-size: 12px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.pricing-table th, .pricing-table td {
+  padding: 15px 15px;
+  min-width: 100px;
+  border: none;
+  text-align: center;
+  background: #eee;
+}
+.pricing-table th {
+  background: #8e9eab;
+  color: #fff;
+}
+.pricing-table td:first-child {
+  font-weight: bold;
+  text-align: left;
+}
+.pricing-table tr:nth-child(even) td {
+  background: white;
+}
+.yourbuttonstyleclass {  
+background-image: url('/images/delite.png') ;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+
+	<meta charset="UTF-8" />
+
+	<title>My Play: Login</title>
+	<link rel="stylesheet" href="css/styleLogin.css" />
+
+</h:head>
+<body>
+
+	<h:form>
+
+
+		<link
+			href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700'
+			rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Sofia'
+			rel='stylesheet' type='text/css' />
+		<div class='login'>
+			<h2>Login</h2>
+			<h4>
+				<h:outputText id="outp" value="#{utilisateurBusiness.text}" />
+			</h4>
+			<h:inputText name="username" p:placeholder="Pseudo"
+				value="#{utilisateurBusiness.utilisateur.pseudo}" type='text' />
+			<h:inputSecret id="pw" name="password" p:placeholder="Password"
+				value="#{utilisateurBusiness.utilisateur.motDePasse}"
+				type='password' />
+			<h:commandButton class="animated" id="enregistrer"
+				action="#{utilisateurBusiness.testLogin()}" value="Login" />
+
+			<!--   <h:inputText class='animated' type='submit' value='Sign in'> -->
+			<a class='forgot' href='#'>Forgot your password?</a> <br /> <a
+				class='forgot' href='register.xhtml'>Create account</a>
+		</div>
+
+
+	</h:form>
+
+
+</body>
+</html>

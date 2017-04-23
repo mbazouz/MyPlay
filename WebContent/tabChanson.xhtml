@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<link rel="stylesheet" href="css/styletab.css" />
+<title>tab</title>
+</h:head> 
+<body>
+<h:form>
+    
+<h1>Table des chansons</h1>
+<div class="table-wrapper">
+    <div class="table-inner">
+      <table class="pricing-table">
+          <tbody>
+            <tr>
+              <th></th>
+              <th>Titre</th>
+              <th>Chanteur</th>
+              <th>Annee Production</th>
+              <th>Date d'ajout</th>
+              <th>Chemin</th>
+            </tr>
+            <ui:repeat var="genre"   value="#{genreBusiness.listeGenre()}">
+            <ui:repeat var="chanson"   value="#{chansonBusiness.ListeChanson()}">
+            <tr class="highlight">
+             <td>Num</td>
+         <td>   <h:commandLink value="#{chanson.titre}" /></td>
+            <td><h:commandLink value="#{chanson.chanteur}" /></td>
+            <td><h:commandLink value="#{chanson.anneeProd}" /></td>
+            <td><h:commandLink value="#{chanson.dateAjout}" /></td>
+            <td><h:commandLink value="#{chanson.chemin}" /></td>
+             <td><h:commandLink action="#{chansonBusiness.capturerIdChanson(chanson.idChanson)}" value="" >
+             <img src="images/edit.png" alt="edit" />
+             </h:commandLink></td>
+             <td><h:commandLink action="#{chansonBusiness.capturerIdChanson1(chanson.idChanson)}" value="" >
+             <img src="images/delite.png" alt="delite" />
+             </h:commandLink></td>
+            </tr>
+             
+            </ui:repeat>
+            </ui:repeat>
+            
+            
+            <h:commandButton class="animated" id="enregistrer" action="#{chansonBusiness.pont()}"	value="Retour" />
+            
+          </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+	</h:form>
+</body> 
+</html>

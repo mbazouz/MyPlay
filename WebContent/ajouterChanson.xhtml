@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+
+<h:head>
+  
+<meta charset="UTF-8" />
+    
+<title>Ajouter Chanson</title>
+        <link rel="stylesheet" href="css/style.css" /> </h:head> 
+<body>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css" />
+<h:form>
+<div class="login">
+  
+<h2>Ajouter Chanson</h2>
+<h4>
+				<h:outputText id="outp" value="#{chansonBusiness.text}" />
+			</h4>
+  <h:inputText id="titre" name="titre" p:placeholder="titre" type="text"  value="#{chansonBusiness.chanson.titre}"/>
+  <h:inputText id="chanteur" name="chanteur" p:placeholder="chanteur" type="text"  value="#{chansonBusiness.chanson.chanteur}"/>
+ <h:inputText id="chemin" name="chemin" p:placeholder="chemin" type="text"  value="#{chansonBusiness.chanson.chemin}"/>
+<h:inputText id="anneeP" name="anneeP" p:placeholder="annee production" type="text"  value="#{chansonBusiness.chanson.anneeProd}"/>
+
+
+
+<h:commandButton class="animated" id="enregistrer" action="#{chansonBusiness.ajouterChanson}"
+				value="Créer Chanson" />
+				
+				<br/><br/>
+<h:commandButton class="animated" id="annuler" action="#{chansonBusiness.annuler()}"
+				value="Annuler" />
+
+
+  </div>
+       
+    </h:form>
+    
+    
+  
+</body></html>

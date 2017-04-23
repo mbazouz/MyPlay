@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    
+    <managed-bean>
+		<managed-bean-name>utilisateurBusiness</managed-bean-name>
+		<managed-bean-class>com.business.UtilisateurBusiness</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+
+    <managed-bean>
+		<managed-bean-name>genreBusiness</managed-bean-name>
+		<managed-bean-class>com.business.GenreBusiness</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>chansonBusiness</managed-bean-name>
+		<managed-bean-class>com.business.ChansonBusiness</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+
+	
+	<navigation-rule>
+		<from-view-id>/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+		<from-action>#{utilisateurBusiness.testLogin()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+<!-- 	ajouter chanson a partir d'acceul gengen -->
+	<navigation-rule>
+		<from-view-id>/GenGen.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.capturerIdGenre(genre.idGenre)}</from-action>
+			<from-outcome>success</from-outcome>
+			
+			<to-view-id>/ajouterChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+
+
+	<navigation-rule>
+		<from-view-id>/GenGen.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{utilisateurBusiness.logOut()}</from-action>
+			<from-outcome>success</from-outcome>
+			
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+<!-- 	ajouter genre a partir d'acceul gengen -->
+	<navigation-rule>
+		<from-view-id>/GenGen.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.pont()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/ajouterGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/GenGen.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.pont1()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/GenGen.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.pont1()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	
+<!-- 	modifier genre a partir d'acceul gestion -->
+	<navigation-rule>
+		<from-view-id>/acceuil.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.pont1()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+
+<!-- 	Retour du table chansons -->
+	<navigation-rule>
+		<from-view-id>/tabChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.pont()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+<!-- 	Retour du table genre -->
+	<navigation-rule>
+		<from-view-id>/tabGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.pont()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+<!-- 	modifier genre a partir d'acceul gestion -->
+	<navigation-rule>
+		<from-view-id>/acceuil.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.pont()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	
+<!-- 	ajouter chanson -->
+	<navigation-rule>
+		<from-view-id>/ajouterChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.ajouterChanson}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/ajouterChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.annuler()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+<!-- 	ajouter genre -->
+	<navigation-rule>
+		<from-view-id>/ajouterGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.ajouterGenre}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/ajouterGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.annuler()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/GenGen.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+<!-- 	table genre -->
+<!-- modifier genre -->
+	<navigation-rule>
+		<from-view-id>/tabGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.capturerIdGenre(genre.idGenre)}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/modifierGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- supprimer genre -->
+	<navigation-rule>
+		<from-view-id>/tabGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.capturerIdGenre1(genre.idGenre)}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/supprimerGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+		
+<!-- 	table chanson -->
+<!-- modifier chanson -->
+	<navigation-rule>
+		<from-view-id>/tabChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.capturerIdChanson(chanson.idChanson)}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/modifierChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!-- supprimer chanson -->
+	<navigation-rule>
+		<from-view-id>/tabGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.capturerIdChanson1(chanson.idChanson)}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/supprimerChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<!-- modifier genre -->
+	<navigation-rule>
+		<from-view-id>/modifierGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.modifierGenre()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/modifierGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.annuler()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+<!-- modifier chanson -->
+	<navigation-rule>
+		<from-view-id>/modifierChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.modifierChanson()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>
+		<from-view-id>/modifierChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.annuler()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>		
+	
+	
+	
+<!-- supprimer genre -->
+	<navigation-rule>
+		<from-view-id>/supprimerGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.supprimerGenre()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/supprimerGenre.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{genreBusiness.annuler()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabGenre.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+<!-- modifier chanson -->
+	<navigation-rule>
+		<from-view-id>/supprimerChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.supprimerChanson()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>
+		<from-view-id>/supprimerChanson.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{chansonBusiness.annuler()}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/tabChanson.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>		
+	
+	
+	
+	
+	<application>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>en_US</default-locale>
+			<supported-locale>de</supported-locale>
+			<supported-locale>fr</supported-locale>
+			<supported-locale>es</supported-locale>
+		</locale-config>
+		<!-- spring 1.2.x <action-listener></action-listener><variable-resolver> 
+			org.springframework.web.jsf.DelegatingVariableResolver </variable-resolver> -->
+	</application>
+
+</faces-config>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	
+<h:head>
+	<title>My Play</title>
+<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="UTF-8" />
+	<link href="css/styleaccueilinformations.css" rel="stylesheet"/>
+<script src="http://code.jquery.com/jquery-latest.min.js"
+		type="text/javascript"></script>
+	<script src="js/script1.js"></script>
+	</h:head> 
+<body>
+<h:form>
+<header>
+   <div class="title">
+  <h4> <h:outputText id="outp1" value="#{utilisateurBusiness.utilisateurActuel.prenom}   " />    
+  <h:outputText id="outp2" value="#{utilisateurBusiness.utilisateurActuel.nom}" />
+  
+    <h:outputText id="outp3" value="Nombre de Genre :  " />    
+  <h:outputText id="outp4" value="#{utilisateurBusiness.utilisateurActuel.idUser}" />
+   <h:outputText id="outp5" value="Nombre de chansons :  " />    
+  <h:outputText id="outp6" value="#{utilisateurBusiness.utilisateurActuel.nom}" />
+   <h:outputText id="outp7" value="Inscri le: " />    
+  <h:outputText id="outp8" value="#{utilisateurBusiness.utilisateurActuel.dateAjout}" />
+  
+  </h4>
+  <img id="logo" src="images/my_play_logo.png" alt="logo" title="MyPlay"/>
+  
+</div>
+<!--<img id="blanc" src="images/4.png" alt="logo" title="MyPlay"/>-->
+</header>
+
+
+<div>
+			<ui:insert name="menu">
+				<ui:include src="/GenGen.xhtml" />
+			</ui:insert>
+		</div>
+
+
+<div id="cssmenu1">
+			<ul>
+
+				<li class="active"><a href="#"><span>Gestion des données</span></a></li>
+
+				<li class="has-sub"><a href="#"><span>Genre</span></a>
+
+					<ul>
+
+						<li><a href="/ajouterGenre.xhtml"><span>Ajouter Genre</span></a></li>
+
+						<li><a href="/tabGenre.xhtml"><span>Modifier Genre</span></a></li>
+
+						<li class="last"><a href="/tabGenre.xhtml"><span>Supprimer Genre</span></a></li>
+					</ul></li>
+
+				<li class="has-sub"><a href="#"><span>Chanson</span></a>
+
+					<ul>
+
+<!-- 						<li><a href="#"><span>Ajouter Chanson</span></a></li> -->
+						<li><a href="/tabChanson.xhtml"><span>Modifier Chanson</span></a></li>
+
+						<li class="last"><a href="/tabChanson.xhtml"><span>Supprimer Chanson</span></a></li>
+					</ul></li>
+
+			</ul>
+		</div>
+
+</h:form>
+
+<div id="cssmenu2">
+			<ul>
+
+				<li class="active"><h1><span>Informations chansons</span></h1></li>
+
+				<li class="has-sub"><span>Titre</span></li>
+				<li class="has-sub"><span>chanteur</span></li>
+				<li class="has-sub"><span>Titre</span></li>
+				<li class="has-sub"><span>anneeProd</span></li>
+				<li class="has-sub"><span>dateAjout</span></li>
+				<li class="has-sub"><span>chemin</span></li>
+					</ul>
+</div>
+
+</body> 
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+
+	<link href="css/styleGenGen.css" rel="stylesheet"/>
+
+</h:head> 
+<body>
+   
+   <h:form>
+<header>
+   <div class="title">
+  <h4> <h:outputText id="outp1" value="#{utilisateurBusiness.utilisateurActuel.prenom}   " />    
+  <h:outputText id="outp2" value="#{utilisateurBusiness.utilisateurActuel.nom}" />
+  <h:commandLink action="#{utilisateurBusiness.logOut()}" value="Deconnecter" />
+  
+<!--     <h:outputText id="outp3" value="Nombre de Genre :  " />     -->
+<!--   <h:outputText id="outp4" value="#{utilisateurBusiness.utilisateurActuel.idUser}" /> -->
+<!--    <h:outputText id="outp5" value="Nombre de chansons :  " />     -->
+<!--   <h:outputText id="outp6" value="#{utilisateurBusiness.utilisateurActuel.nom}" /> -->
+   <br/>
+   <h:outputText id="outp7" value="     Inscri le: " />    
+  <h:outputText id="outp8" value="#{utilisateurBusiness.utilisateurActuel.dateAjout}" />
+  
+  </h4>
+  <img id="logo" src="images/my_play_logo.png" alt="logo" title="MyPlay"/>
+  
+</div>
+<!--<img id="blanc" src="images/4.png" alt="logo" title="MyPlay"/>-->
+</header>
+   </h:form>
+   
+   
+<h:form>
+<div id='cssmenu'>
+<ul>
+
+							
+			<li><h:commandLink action="#{genreBusiness.pont1()}" value="Modifier et supprimer Genres" /></li>
+			<li><h:commandLink action="#{chansonBusiness.pont1()}" value="Liste des chansons" /></li>
+			<li><a href='#'>Genres &amp; Chansons</a></li>
+         <ui:repeat var="genre"   value="#{genreBusiness.listeGenre()}">
+  		 <li class='active has-sub'><h:commandLink action="#{genreBusiness.capturerIdGenre(genre.idGenre)}" value="#{genre.nom}" />
+      <ul>
+                  
+         <ui:repeat var="chanson" value="#{chansonBusiness.ListeChanson()}">
+         <li><h:commandLink  value="#{chanson.titre}" /></li>
+         </ui:repeat>
+         <li><h:commandLink action="#{chansonBusiness.capturerIdGenre(genre.idGenre)}" value="Ajouter chanson" /></li>
+      </ul>
+      
+   </li>
+</ui:repeat>
+<li><h:commandLink action="#{genreBusiness.pont()}" value="Ajouter genre" /></li>
+</ul>
+</div>
+
+
+
+</h:form>
+
+
+
+</body> 
+</html>

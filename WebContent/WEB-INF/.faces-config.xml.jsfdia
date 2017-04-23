@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#register.xhtml" PATH="/register.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#register.xhtml:0" NAME="item"
+   PATH="/register.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#GenGen.xhtml" NAME="output"
+    PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml"
+  SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{utilisateurBusiness.testLogin()}:#GenGen.xhtml"
+    NAME="output" PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml"
+    TITLE="#{utilisateurBusiness.testLogin()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ajouterChanson.xhtml"
+  PATH="/ajouterChanson.xhtml" SHAPE="464,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ajouterChanson.xhtml:0" NAME="item"
+   PATH="/ajouterChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.ajouterChanson}:#GenGen.xhtml"
+    NAME="output" PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml"
+    TITLE="#{chansonBusiness.ajouterChanson}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#ajouterChanson.xhtml:1" NAME="item1"
+   PATH="/ajouterChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.annuler()}:#GenGen.xhtml"
+    NAME="output" PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml"
+    TITLE="#{chansonBusiness.annuler()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#acceuil.xhtml" PATH="/acceuil.xhtml"
+  SHAPE="240,545,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#acceuil.xhtml:0" NAME="item"
+   PATH="/acceuil.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.pont1()}:#tabGenre.xhtml" NAME="output"
+    PATH="/tabGenre.xhtml" TARGET="rules:#tabGenre.xhtml"
+    TITLE="#{genreBusiness.pont1()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#acceuil.xhtml:1" NAME="item1"
+   PATH="/acceuil.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.pont()}:#tabChanson.xhtml"
+    NAME="output" PATH="/tabChanson.xhtml"
+    TARGET="rules:#tabChanson.xhtml"
+    TITLE="#{chansonBusiness.pont()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ajouterGenre.xhtml"
+  PATH="/ajouterGenre.xhtml" SHAPE="480,465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ajouterGenre.xhtml:0" NAME="item"
+   PATH="/ajouterGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.ajouterGenre}:#GenGen.xhtml"
+    NAME="output" PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml"
+    TITLE="#{genreBusiness.ajouterGenre}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#ajouterGenre.xhtml:1" NAME="item1"
+   PATH="/ajouterGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.annuler()}:#GenGen.xhtml" NAME="output"
+    PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml"
+    TITLE="#{genreBusiness.annuler()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#tabGenre.xhtml" PATH="/tabGenre.xhtml"
+  SHAPE="32,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#tabGenre.xhtml:0" NAME="item"
+   PATH="/tabGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.pont()}:#GenGen.xhtml" NAME="output"
+    PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml"
+    TITLE="#{genreBusiness.pont()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#tabGenre.xhtml:1" NAME="item1"
+   PATH="/tabGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.capturerIdGenre(genre.idGenre)}:#modifierGenre.xhtml"
+    NAME="output" PATH="/modifierGenre.xhtml"
+    TARGET="rules:#modifierGenre.xhtml"
+    TITLE="#{genreBusiness.capturerIdGenre(genre.idGenre)}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#tabGenre.xhtml:2" NAME="item2"
+   PATH="/tabGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.capturerIdGenre1(genre.idGenre)}:#supprimerGenre.xhtml"
+    NAME="output" PATH="/supprimerGenre.xhtml"
+    TARGET="rules:#supprimerGenre.xhtml"
+    TITLE="#{genreBusiness.capturerIdGenre1(genre.idGenre)}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#tabGenre.xhtml:3" NAME="item3"
+   PATH="/tabGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.capturerIdChanson1(chanson.idChanson)}:#supprimerChanson.xhtml"
+    NAME="output" PATH="/supprimerChanson.xhtml"
+    TARGET="rules:#supprimerChanson.xhtml"
+    TITLE="#{chansonBusiness.capturerIdChanson1(chanson.idChanson)}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#modifierGenre.xhtml"
+  PATH="/modifierGenre.xhtml" SHAPE="256,657,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#modifierGenre.xhtml:0" NAME="item"
+   PATH="/modifierGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.modifierGenre()}:#tabGenre.xhtml"
+    NAME="output" PATH="/tabGenre.xhtml" TARGET="rules:#tabGenre.xhtml"
+    TITLE="#{genreBusiness.modifierGenre()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#modifierGenre.xhtml:1" NAME="item1"
+   PATH="/modifierGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.annuler()}:#tabGenre.xhtml"
+    NAME="output" PATH="/tabGenre.xhtml" TARGET="rules:#tabGenre.xhtml"
+    TITLE="#{genreBusiness.annuler()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#supprimerGenre.xhtml"
+  PATH="/supprimerGenre.xhtml" SHAPE="256,769,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#supprimerGenre.xhtml:0" NAME="item"
+   PATH="/supprimerGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.supprimerGenre()}:#tabGenre.xhtml"
+    NAME="output" PATH="/tabGenre.xhtml" TARGET="rules:#tabGenre.xhtml"
+    TITLE="#{genreBusiness.supprimerGenre()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#supprimerGenre.xhtml:1" NAME="item1"
+   PATH="/supprimerGenre.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.annuler()}:#tabGenre.xhtml"
+    NAME="output" PATH="/tabGenre.xhtml" TARGET="rules:#tabGenre.xhtml"
+    TITLE="#{genreBusiness.annuler()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#tabChanson.xhtml" PATH="/tabChanson.xhtml"
+  SHAPE="32,673,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#tabChanson.xhtml:0" NAME="item"
+   PATH="/tabChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.pont()}:#GenGen.xhtml" NAME="output"
+    PATH="/GenGen.xhtml" TARGET="rules:#GenGen.xhtml"
+    TITLE="#{chansonBusiness.pont()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#tabChanson.xhtml:1" NAME="item1"
+   PATH="/tabChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.capturerIdChanson(chanson.idChanson)}:#modifierChanson.xhtml"
+    NAME="output" PATH="/modifierChanson.xhtml"
+    TARGET="rules:#modifierChanson.xhtml"
+    TITLE="#{chansonBusiness.capturerIdChanson(chanson.idChanson)}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#modifierChanson.xhtml"
+  PATH="/modifierChanson.xhtml" SHAPE="240,913,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#modifierChanson.xhtml:0" NAME="item"
+   PATH="/modifierChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.modifierChanson()}:#tabChanson.xhtml"
+    NAME="output" PATH="/tabChanson.xhtml"
+    TARGET="rules:#tabChanson.xhtml"
+    TITLE="#{chansonBusiness.modifierChanson()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#modifierChanson.xhtml:1" NAME="item1"
+   PATH="/modifierChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.annuler()}:#tabChanson.xhtml"
+    NAME="output" PATH="/tabChanson.xhtml"
+    TARGET="rules:#tabChanson.xhtml"
+    TITLE="#{chansonBusiness.annuler()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#supprimerChanson.xhtml"
+  PATH="/supprimerChanson.xhtml" SHAPE="272,913,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#supprimerChanson.xhtml:0" NAME="item"
+   PATH="/supprimerChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.supprimerChanson()}:#tabChanson.xhtml"
+    NAME="output" PATH="/tabChanson.xhtml"
+    TARGET="rules:#tabChanson.xhtml"
+    TITLE="#{chansonBusiness.supprimerChanson()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#supprimerChanson.xhtml:1" NAME="item1"
+   PATH="/supprimerChanson.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.annuler()}:#tabChanson.xhtml"
+    NAME="output" PATH="/tabChanson.xhtml"
+    TARGET="rules:#tabChanson.xhtml"
+    TITLE="#{chansonBusiness.annuler()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#GenGen.xhtml" PATH="/GenGen.xhtml"
+  SHAPE="368,257,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#GenGen.xhtml:0" NAME="item"
+   PATH="/GenGen.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.capturerIdGenre(genre.idGenre)}:#ajouterChanson.xhtml"
+    NAME="output" PATH="/ajouterChanson.xhtml"
+    TARGET="rules:#ajouterChanson.xhtml"
+    TITLE="#{chansonBusiness.capturerIdGenre(genre.idGenre)}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#GenGen.xhtml:1" NAME="item1"
+   PATH="/GenGen.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{utilisateurBusiness.logOut()}:#login.xhtml"
+    NAME="output" PATH="/login.xhtml" TARGET="rules:#login.xhtml"
+    TITLE="#{utilisateurBusiness.logOut()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#GenGen.xhtml:2" NAME="item2"
+   PATH="/GenGen.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.pont()}:#ajouterGenre.xhtml"
+    NAME="output" PATH="/ajouterGenre.xhtml"
+    TARGET="rules:#ajouterGenre.xhtml"
+    TITLE="#{genreBusiness.pont()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#GenGen.xhtml:3" NAME="item3"
+   PATH="/GenGen.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{genreBusiness.pont1()}:#tabGenre.xhtml" NAME="output"
+    PATH="/tabGenre.xhtml" TARGET="rules:#tabGenre.xhtml"
+    TITLE="#{genreBusiness.pont1()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#GenGen.xhtml:4" NAME="item4"
+   PATH="/GenGen.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{chansonBusiness.pont1()}:#tabChanson.xhtml"
+    NAME="output" PATH="/tabChanson.xhtml"
+    TARGET="rules:#tabChanson.xhtml"
+    TITLE="#{chansonBusiness.pont1()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

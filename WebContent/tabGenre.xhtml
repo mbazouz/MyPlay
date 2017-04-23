@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<link rel="stylesheet" href="css/styletab.css" />
+<title>tab</title>
+</h:head> 
+<body>
+<h:form>
+
+    
+<h1>Table des genres</h1>
+<div class="table-wrapper">
+    <div class="table-inner">
+      <table class="pricing-table">
+          <tbody>
+            <tr>
+              <th></th>
+              <th>Nom</th>
+              <th>Nombre de chansons</th>
+              <th>Date d'ajout</th>
+              <th>Modifier</th>
+              <th>Supprimer</th>
+            </tr>
+            <ui:repeat var="genre"   value="#{genreBusiness.listeGenre()}">
+            <tr class="highlight">
+             <td>Num</td>
+         <td>   <h:commandLink value="#{genre.nom}" /></td>
+            <td><h:commandLink value="#{genre.nbrChansons}" /></td>
+            <td><h:commandLink value="#{genre.dateAjout}" /></td>
+             <td><h:commandLink action="#{genreBusiness.capturerIdGenre(genre.idGenre)}" value="" >
+             <img src="images/edit.png" alt="edit" />
+             </h:commandLink></td>
+              <td><h:commandLink action="#{genreBusiness.capturerIdGenre1(genre.idGenre)}" value="" >
+             <img src="images/delite.png" alt="delite" />
+             </h:commandLink></td>
+            </tr>
+            </ui:repeat>
+
+  <h:commandButton class="animated" id="enregistrer" action="#{genreBusiness.pont()}"	value="Retour" />
+
+          </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+	</h:form>
+</body> 
+</html>

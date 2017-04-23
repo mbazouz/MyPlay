@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
+
+<h:head>
+  
+<meta charset="UTF-8" />
+    
+<title>Supprimer Genre</title>
+        <link rel="stylesheet" href="css/style.css" /> </h:head> 
+<body>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css" />
+<h:form>
+<div class="login">
+  
+<h2>Supprimer Genre</h2>
+
+ 
+<h:commandButton class="animated" id="enregistrer" action="#{genreBusiness.supprimerGenre()}"
+				value="Confirmer" />
+
+<br/><br/>
+<h:commandButton class="animated" id="annuler" action="#{genreBusiness.annuler()}"
+				value="Annuler" />
+  </div>
+       
+    </h:form>
+    
+    
+  
+</body></html>
